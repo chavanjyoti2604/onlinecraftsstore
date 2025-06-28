@@ -85,7 +85,7 @@ export default function BuyNow() {
 
     try {
       const token = localStorage.getItem("token");
-      const res   = await fetch("http://localhost:8070/api/orders/place", {
+      const res   = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/orders/place`, {
         method: "POST",
         body:   fd,
         headers:{ Authorization: `Bearer ${token}` },
