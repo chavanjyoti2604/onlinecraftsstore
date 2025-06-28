@@ -45,7 +45,7 @@ export const fetchUserStatusFromAPI = async () => {
     const token = getToken();
     if (!token) return null;
 
-    const res = await axios.get("http://localhost:8070/auth/status", {
+    const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/auth/status`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
