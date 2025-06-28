@@ -14,7 +14,7 @@ export default function SellerStatus() {
 
     // Fetch user profile info including status
     axios
-      .get("http://localhost:8070/auth/userinfo", {
+      .get(`${process.env.REACT_APP_API_BASE_URL}/auth/userinfo`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -43,7 +43,7 @@ export default function SellerStatus() {
 
     axios
       .put(
-        "http://localhost:8070/auth/profile",
+        `${process.env.REACT_APP_API_BASE_URL}/auth/profile`,
         { name: formData.name }, // only send name
         {
           headers: { Authorization: `Bearer ${token}` },
