@@ -9,7 +9,7 @@ export default function ApprovedShops() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8070/shop/approved", {
+      .get(`${process.env.REACT_APP_API_BASE_URL}/shop/approved`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
