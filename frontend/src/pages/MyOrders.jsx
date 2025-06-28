@@ -14,7 +14,7 @@ export default function MyOrders() {
     if (!token || !userId) { setError("Not logged in."); setLoading(false); return; }
 
     axios
-      .get(`http://localhost:8070/api/orders/user/${userId}/confirmed`, {
+      .get(`${process.env.REACT_APP_API_BASE_URL}/api/orders/user/${userId}/confirmed`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(res => setOrders(res.data))
