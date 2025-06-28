@@ -30,7 +30,7 @@ export default function Navbar() {
       if (tkn && rl.includes("ROLE_USER")) {
         try {
           const res   = await axios.get(
-            "http://localhost:8070/api/notifications/user",
+            `${process.env.REACT_APP_API_BASE_URL}/api/notifications/user`,
             { headers:{ Authorization:`Bearer ${tkn}` } }
           );
           const notes  = Array.isArray(res.data) ? res.data : [];
