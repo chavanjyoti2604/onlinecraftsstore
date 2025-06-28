@@ -16,7 +16,7 @@ export default function Profile() {
       return;
     }
     axios
-      .get("http://localhost:8070/auth/userinfo", {
+      .get(`${process.env.REACT_APP_API_BASE_URL}/auth/userinfo`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -44,7 +44,7 @@ export default function Profile() {
     setLoading(true);
     axios
       .put(
-        "http://localhost:8070/auth/profile",
+        `${process.env.REACT_APP_API_BASE_URL}/auth/profile`,
         { name: formData.name },
         {
           headers: { Authorization: `Bearer ${token}` },
