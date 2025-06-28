@@ -1,0 +1,40 @@
+.confirmed-orders-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.confirmed-orders-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.confirmed-order-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.confirmed-order-item:hover {
+  transform: translateY(-5px);
+}
+
+.product-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.order-info p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}

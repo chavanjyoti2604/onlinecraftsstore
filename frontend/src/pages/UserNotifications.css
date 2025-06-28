@@ -1,0 +1,75 @@
+.notifications-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.notifications-container h2 {
+  text-align: center;
+  font-size: 1.7rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.notification-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5faff;
+  padding: 1rem 1.2rem;
+  border-left: 6px solid #007bff; /* default (shouldn’t appear) */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.05);
+}
+
+/* accent colors */
+.notification-item.pending   { border-left-color: #ff8800; } /* amber  */
+.notification-item.confirmed { border-left-color: #28a745; } /* green  */
+.notification-item.rejected  { border-left-color: #dc3545; } /* red    */
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-content p {
+  margin: 4px 0;
+  color: #444;
+  font-size: 1rem;
+}
+
+/* tiny badge under message */
+.status-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* badge colors */
+.status-badge.pending   { background: #ffe8c2; color: #d88400; }
+.status-badge.confirmed { background: #d4f8dd; color: #28a745; }
+.status-badge.rejected  { background: #f9d7da; color: #dc3545; }
+
+.notification-image {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #d6e9ff;
+}

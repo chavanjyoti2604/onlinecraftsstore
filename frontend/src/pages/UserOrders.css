@@ -1,0 +1,82 @@
+/* ------------- container ------------- */
+.user-orders-container {
+  max-width: 1000px;
+  margin: 2.5rem auto;
+  padding: 1.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+}
+
+/* heading */
+.user-orders-container h2 {
+  text-align: center;
+  font-size: 1.9rem;
+  margin-bottom: 2rem;
+  color: #007bff;
+  font-weight: 700;
+}
+
+/* ------------- grid / list ------------- */
+.order-list {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+}
+
+/* ------------- card ------------- */
+.order-card {
+  display: flex;
+  background: #f9fbff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,123,255,0.08);
+  overflow: hidden;
+  transition: transform .25s;
+}
+.order-card:hover { transform: translateY(-4px); }
+
+/* product image */
+.order-product-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-right: 1px solid #e1eaff;
+  flex-shrink: 0;
+}
+
+/* ------------- info column ------------- */
+.order-info {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.order-info h3 {
+  margin: 0 0 .4rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* text rows */
+.order-info p {
+  margin: .2rem 0;
+  font-size: .95rem;
+  color: #444;
+  line-height: 1.35;
+}
+
+.order-info p strong { color: #000; }
+
+/* ------------- status label ------------- */
+.status-label {
+  margin-top: .4rem;
+  font-weight: 600;
+}
+
+.status-label .confirmed {
+  color: #28a745;
+  font-weight: 700;
+}

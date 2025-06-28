@@ -1,0 +1,48 @@
+.input-field{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:1rem;
+}
+
+.input-field label{
+  margin-bottom:0.5rem;
+  font-weight:bold;
+  color:#333;
+}
+
+/* wrapper lets us position the icon over the input */
+.input-wrapper{
+  position:relative;
+  width:100%;
+}
+
+.input-wrapper input{
+  width:100%;
+  padding:0.5rem 2.7rem 0.5rem 0.75rem;   /* room on the right for the icon */
+  border:1px solid #ccc;
+  border-radius:4px;
+  font-size:1rem;
+  transition:border-color 0.2s;
+}
+
+.input-wrapper input:focus{
+  border-color:#0066cc;
+  outline:none;
+  background:#f0f8ff;
+}
+
+/* the eye toggle */
+.eye-toggle{
+  position:absolute;
+  right:0.8rem;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:1.1rem;
+  color:#444;                /* dark-gray icon */
+  cursor:pointer;
+  user-select:none;
+}
+
+.eye-toggle:hover{
+  color:#000;                /* darker on hover for feedback */
+}
