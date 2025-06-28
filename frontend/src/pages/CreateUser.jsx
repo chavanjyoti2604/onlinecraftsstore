@@ -23,7 +23,7 @@ export default function CreateUser() {
       const token = localStorage.getItem("token");
 
       const response = await axios.post(
-        "http://localhost:8070/admin/create-user",
+        `${process.env.REACT_APP_API_BASE_URL}/admin/create-user`,
         formData,
         {
           headers: {
