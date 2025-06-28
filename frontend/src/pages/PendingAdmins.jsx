@@ -17,7 +17,7 @@ export default function PendingAdmins() {
 
   const fetchPendingAdmins = useCallback(async () => {
     try {
-      const res = await axios.get("http://localhost:8070/auth/users/pending-admins", {
+      const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/auth/users/pending-admins`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPendingAdmins(res.data);
@@ -32,7 +32,7 @@ export default function PendingAdmins() {
   useEffect(() => {
     const checkAccess = async () => {
       try {
-        const res = await axios.get("http://localhost:8070/auth/userinfo", {
+        const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/auth/userinfo`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const role = res.data.roles;
@@ -52,7 +52,7 @@ export default function PendingAdmins() {
 
   const handleApprove = async (id) => {
     try {
-      await axios.put(`http://localhost:8070/auth/users/approve/${id}`, null, {
+      await axios.put(`${process.env.REACT_APP_API_BASE_URL}/auth/users/approve/${id}`, null, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("Admin approved successfully!");
