@@ -18,7 +18,7 @@ export default function PendingSellers() {
   const fetchPendingSellers = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:8070/auth/users/pending-sellers", {
+      const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/auth/users/pending-sellers`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPendingSellers(res.data);
@@ -33,7 +33,7 @@ export default function PendingSellers() {
   useEffect(() => {
     const checkAccessAndFetch = async () => {
       try {
-        const res = await axios.get("http://localhost:8070/auth/userinfo", {
+        const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/auth/userinfo`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -74,7 +74,7 @@ export default function PendingSellers() {
   const handleApprove = async (id) => {
     setLoading(true);
     try {
-      await axios.put(`http://localhost:8070/auth/users/approve/${id}`, null, {
+      await axios.put(`${process.env.REACT_APP_API_BASE_URL}/auth/users/approve/${id}`, null, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchPendingSellers();
