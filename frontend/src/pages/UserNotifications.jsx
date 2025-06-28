@@ -8,7 +8,7 @@ export default function UserNotifications() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:8070/api/notifications/user", {
+      .get(`${process.env.REACT_APP_API_BASE_URL}/api/notifications/user`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setNotifications(res.data))
@@ -53,7 +53,7 @@ export default function UserNotifications() {
                   <img
                     src={n.productImage.startsWith("http")
                           ? n.productImage
-                          : `http://localhost:8070/images/${n.productImage}`}
+                          : `${process.env.REACT_APP_API_BASE_URL}/images/${n.productImage}`}
                     alt="Product"
                     className="notification-image"
                   />

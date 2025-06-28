@@ -16,7 +16,7 @@ export default function ApprovedAdmins() {
 
   const fetchApprovedAdmins = useCallback(async () => {
     try {
-      const res = await axios.get("http://localhost:8070/auth/users/approved-admins", {
+      const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/auth/users/approved-admins`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setApprovedAdmins(res.data);
@@ -31,7 +31,7 @@ export default function ApprovedAdmins() {
   useEffect(() => {
     const checkAccess = async () => {
       try {
-        const res = await axios.get("http://localhost:8070/auth/userinfo", {
+        const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/auth/userinfo`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const role = res.data.roles;

@@ -13,7 +13,7 @@ export default function UserOrders() {
     const token = localStorage.getItem("token");
     if (!token) { setError("Not logged in."); setLoading(false); return; }
 
-    axios.get("http://localhost:8070/api/orders/confirmed/user", {
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/orders/confirmed/user`, {
       headers:{ Authorization:`Bearer ${token}` }
     })
     .then(res => setOrders(res.data))

@@ -6,4 +6,4 @@
 export const imgSrc = (nameOrUrl) =>
   nameOrUrl?.startsWith("http")
     ? nameOrUrl
-    : `http://localhost:8070/images/${nameOrUrl}`;
+    : `${process.env.REACT_APP_API_BASE_URL}/images/${nameOrUrl}`;

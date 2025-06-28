@@ -9,7 +9,7 @@ export default function PendingShops() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8070/shop/pending", {
+      .get(`${process.env.REACT_APP_API_BASE_URL}/shop/pending`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -24,7 +24,7 @@ export default function PendingShops() {
   const approveShop = async (shopId) => {
     try {
       await axios.put(
-        `http://localhost:8070/shop/approve/${shopId}`,
+        `${process.env.REACT_APP_API_BASE_URL}/shop/approve/${shopId}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

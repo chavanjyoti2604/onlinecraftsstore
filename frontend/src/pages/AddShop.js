@@ -26,7 +26,7 @@ export default function AddShop() {
 
     try {
       await axios.post(
-        "http://localhost:8070/shop/add",
+        `${process.env.REACT_APP_API_BASE_URL}/shop/add`,
         shop,
         {
           headers: {

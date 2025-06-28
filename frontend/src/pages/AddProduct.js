@@ -29,7 +29,7 @@ export default function AddProduct() {
 
     try {
       await axios.post(
-        `http://localhost:8070/product/add/${product.shopId}`,
+        `${process.env.REACT_APP_API_BASE_URL}/product/add/${product.shopId}`,
         {
           name: product.name,
           description: product.description,
