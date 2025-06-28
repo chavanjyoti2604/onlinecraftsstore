@@ -16,7 +16,7 @@ export default function ApprovedSellers() {
 
   const fetchApprovedSellers = useCallback(async () => {
     try {
-      const res = await axios.get("http://localhost:8070/auth/users/approved-sellers", {
+      const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/auth/users/approved-sellers`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setApprovedSellers(res.data);
@@ -31,7 +31,7 @@ export default function ApprovedSellers() {
   useEffect(() => {
     const checkAccessAndFetch = async () => {
       try {
-        const res = await axios.get("http://localhost:8070/auth/userinfo", {
+        const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/auth/userinfo`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
