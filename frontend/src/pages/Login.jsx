@@ -15,7 +15,7 @@ export default function Login() {
     e.preventDefault();
     try {
       /* ---------- 1. LOGIN ---------- */
-      const { data } = await axios.post("http://localhost:8070/auth/login", formData);
+      const { data } = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/auth/login`, formData);
       const { token, role, userId, email } = data;
 
       localStorage.setItem("token", token);
@@ -26,7 +26,7 @@ export default function Login() {
       /* ---------- 2. GET APPROVED SHOP IF SELLER ---------- */
       if (role === "ROLE_SELLER") {
         try {
-          const shopRes = await axios.get("http://localhost:8070/shop/my-approved-shop", {
+          const shopRes = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/shop/my-approved-shop`, {
             headers: { Authorization: `Bearer ${token}` },
           });
 
